@@ -1,6 +1,6 @@
-# How Does React Tell a Class from a Function?
+# React는 어떻게 함수로부터 클래스를 구분할까?
 
-Dan Abramov, [Ppersonal Blog](https://overreacted.io/how-does-react-tell-a-class-from-a-function), December 2, 2018
+> Dan Abramov, [Ppersonal Blog](https://overreacted.io/how-does-react-tell-a-class-from-a-function), December 2, 2018
 
 아래 함수로 정의된 `Greeting` 컴포넌트의 경우를 새각해봅시다.
 
@@ -399,7 +399,7 @@ console.log(Greeting.prototype.isReactComponent); // ✅ Yes
 
 ---
 
-이 이야기가 약간 낚시가 아니냐고 생각할 수 있습니다. 실제 해결 방법은 매우 간단하지만, 왜 React가 이런 이런 솔류션을 선택했고 대안이 어떤 것들이 있었는지 설명하기 위해 크게 돌아갔습니다.
+이 이야기가 좀 낚시같다고 생각할 수 있습니다. 실제 해결 방법은 무척 간단하지만, 왜 React가 이런 솔류션을 선택했고 대안이 어떤 것들이 있었는지 설명하기 위해 크게 돌아갔습니다.
 
 라이브러리 API들과 관련해서 자주 있었던 내 경험상, API를 간단하게 사용하려면 언어의 의미 체계(몇몇 언어에 대해서는 가능하면 향후 계획 까지 포함해서), 런타임 성능, ergonomics with and without compile-time steps, 생태계와 패키징 솔류션의 상태, early warnings 등등을 고려해야 합니다. 최종 결론은 언제나 가장 우아한건 아니지만, 항상 실용적입니다.
 
