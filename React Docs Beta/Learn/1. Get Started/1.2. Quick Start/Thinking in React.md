@@ -1,5 +1,7 @@
 # React에서 사고하기
 
+> 원문: [React Docs Beta > Learn > Quick Start > Thinking in React](https://beta.reactjs.org/learn/thinking-in-react)
+
 React는 디자인을 바라보고 앱을 구현하는 것에 대한 당신의 사고를 바꿀 수 있습니다. React로 유저 인터페이스를 구현할 때, 우선적으로 이것을 컴포넌트 조각으로 분해할 겁니다. 그리고, 컴포넌트들의 각기 다른 외관 상태를 표현할 겁니다. 마지막으로, 데이터의 흐름에 따라 컴포너트들을 연결할 것입니다. 이번 튜토리얼에서, React로 검색 가능한 제품 데이터 테이블을 구현하는 사고의 순서에 대해 알려드리도록 하겠습니다.
 
 ## 목업으로 시작하기
@@ -345,7 +347,17 @@ function FilterableProductTable({ products }: { products: Array<Product> }) {
 `SearchBar` 내부에서는 `onChange`이벤트 핸들러를 추가할 수 있으며, 이를 통해 부모의 state를 변경할 수 있습니다.
 
 ```tsx
-function SearchBar({ filterText, inStockOnly, onFilterTextChange, onInStockOnlyChange }) {
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange,
+}: {
+  filterText: string;
+  inStockOnly: boolean;
+  onFilterTextChange: (value: string) => void;
+  onInStockOnlyChange: (value: string) => void;
+}) {
   return (
     <form>
       <input
